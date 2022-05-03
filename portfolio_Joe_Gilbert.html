@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 
+
+<!--TODO:
+CONVERT PROJECTS SECTION INTO LINK TO SECTION PAGE BY SECTIONS
+TOOLTIP TO SHOW CODE TYPE-->
 <style>
     /*
 DD4A54
@@ -23,7 +27,9 @@ F7E9B3
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
+        z-index: 1;
+        height: 9vh;
 
     }
 
@@ -31,37 +37,46 @@ F7E9B3
         display: flex;
         margin-right: 2rem;
         list-style: none;
+        height: 9vh;
     }
 
     #navbar li {
+        position: relative;
+        top: 0%;
         padding-left: 1rem;
+        padding-right: 1rem;
+        height: 6.2vh;
+        box-sizing: inherit;
     }
 
-   
+    #navbar li:hover {
+        background-color: #3C393F;
+    }
+
+    #navbar a {
+        color: white;
+        text-decoration: none;
+        font-family: helvetica;
+        font-size: 1.25rem;
+    }
+
+
 
     /*welcome section */
-    #name {
+    h1 {
         font-weight: bold;
         font-size: 3rem;
         color: #e32f44;
     }
 
-    #upper {
-        font-size: 2rem;
-        color: white;
-    }
-
-    #lower {
-        font-size: 2rem;
-        color: white;
-    }
+   
 
     #welcome-section {
         background-color: #3C393F;
         position: absolute;
-
         width: 100%;
-        left: 0;
+        height: 100%;
+        left: 0%;
         top: 8%;
 
     }
@@ -70,11 +85,109 @@ F7E9B3
 
     #projects {
         position: absolute;
-        top: 54%;
-        width: 100vw;
+        top: 52%;
+        width: 100%;
         left: 0%;
-        background-color: #84A1A7;
+        background-color: #737e8e;
+        color: white;
+        padding-bottom: 2rem;
+        
     }
+
+    
+
+    .projects-grid {
+        display: grid;
+        /*see: https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/*/
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 4rem;
+        width: 100%;
+        max-width: 1280px;
+        
+    }
+
+    .project-image {
+        height: 10rem;
+        width: 100%;
+        object-fit: cover;
+        /*image covers available space*/
+        display: block;
+    }
+
+    .project-title {
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        padding: 1rem 0.5rem;
+        font-family: helvetica;
+        font-size: 1.25rem;
+
+    }
+
+    .project-quote {
+        font-style: italic;
+        text-align: center;
+
+        color: white;
+        text-decoration: none;
+
+        font-family: helvetica;
+        font-size: 1rem;
+    }
+
+    /*Links */
+
+    
+
+    #links {
+        
+        position: absolute;
+        top: 122.8%;
+        width: 100%;
+        left: 0%;
+        background-color: #3C393F;
+        color: white;
+        padding-bottom: 6rem;
+    }
+
+    .list {
+        position: absolute;
+        left: 35%;
+    }
+
+    
+
+    
+
+    .list li {
+        display: inline-block;
+       
+        
+        position: relative;
+        top: 0%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: 6.2vh;
+        box-sizing: inherit;
+        list-style: none;
+    }
+
+    .list li:hover {
+        background-color: #3C393F;
+    }
+
+    .list a {
+        color: white;
+        text-decoration: none;
+        font-family: helvetica;
+        font-size: 1.25rem;
+    }
+
+    .list li:hover {
+        scale: 1.25;
+    }
+
+
 
     /* general classes */
 
@@ -83,44 +196,115 @@ F7E9B3
     }
 
     #test {
-        position:absolute;
+        position: absolute;
         top: 10000px;
     }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    /* Accessibility media queries */
+
+    /*ipad */
+    @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
 </style>
 
 <html>
 
+<!-- HEADER WITH NAVBAR-->
 <header id="header">
-    
+
     <nav id="navbar">
         <ul>
-            <li id="top"> 
-                <a href="#header">Page Top </a>
-                </li>
-            <li id="work" >
-                <a href="#welcome-section"> My Work</a>
-                </li>
+            <li id="top">
+                <a href="#welcome-section">Welcome </a>
+            </li>
+            <li id="work">
+                <a href="#projects"> My work</a>
+            </li>
+            <li id="contact">
+                <a href="#links"> Contact</a>
+            </li>
         </ul>
 
     </nav>
 </header>
 
+<!--BODY WITH WELCOME SECTION-->
+
 <body>
     <section class="center" id="welcome-section">
-        <h1 id="upper">Hi my name is</h1>
+        <h2 id="upper">Hi my name is</h1>
         <h1 id="name">Joe Gilbert</h1>
-        <h1 id="lower">This is my coding Portfolio- enjoy!</h1>
+        <h2 id="lower">This is my coding Portfolio- enjoy!</h1>
     </section>
 
+    <!--SECTION WITH PROJECTS AS A GRID D3 TEMPLATE, WEB APP, BINFO-->
     <section id="projects">
         <h2 class="center">My projects</h2>
 
+        <div class="projects-grid">
+
+            <a class="project-tile center" href="https://github.com/joeglDev/JavaScript-D3-Templates" target="_blank">
+                <img class="project-image"
+                    src="/Courses/FreeCodeCamp/Responsive Web Design/Projects/Portfolio page/images/d3 bar.jpg"
+                    alt="simple barchart made with JavaScript D3 library">
+                <p class="project-title"><code><<</code>D3: Bar Chart<code>>></code></p>
+                <quote class="project-quote">A template barchart using JavaScript D3 Library</quote>
+            </a>
+
+            <a class="project-tile center" href="https://github.com/joeglDev/2022-03-Weather-App.2" target="_blank">
+                <img class="project-image"
+                    src="/Courses/FreeCodeCamp/Responsive Web Design/Projects/Portfolio page/images/weather app.jpg">
+                <p class="project-title"><code><<</code>Daily Weather App<code>>></code></p>
+                <quote class="project-quote">Weather app using JavaScript fetch to fetch data from APIs</quote>
+            </a>
+
+            <a class="project-tile center" href="https://github.com/joeglDev/Bioinformatics-in-Python" target="_blank">
+                <img class="project-image"
+                    src="/Courses/FreeCodeCamp/Responsive Web Design/Projects/Portfolio page/images/python binfo.jpg">
+                <p class="project-title"><code><<</code>DNA manipulation<code>>></code></p>
+                <quote class="project-quote">A project to carry out bioinformatics operations on short DNA strings using
+                    Python</quote>
+            </a>
+
+
+
+        </div>
+
     </section>
 
-    <div id="test"><a href="#welcome-section">aaaa</a><p>hi</p></div>
+    <!--Contact Details-->
+    <section id="links">
+        <h2 class="center" >Contact me</h2>
+        <div class="list">
+            <ul>
+                <li id="git" >
+                    <a id="profile-link" href="https://github.com/joeglDev" target="_blank">GitHub </a>
+                </li>
+                <li id="linkedIn">
+                    <a href="https://www.linkedin.com/in/joegilbertdev/" target="_blank"> LinkedIn</a>
+                </li>
+                <li id="email">
+                    <a href="mailto:joegilbertdev@outlook.com" target="_blank"> Email</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </section>
+
     
+
+
 </body>
 
 </html>
-
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
