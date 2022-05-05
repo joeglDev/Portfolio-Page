@@ -3,7 +3,9 @@
 
 <!--TODO:
 CONVERT PROJECTS SECTION INTO LINK TO SECTION PAGE BY SECTIONS
-TOOLTIP TO SHOW CODE TYPE-->
+
+-ADD CV
+-ADD IMagnes to links-->
 <style>
     /*
 DD4A54
@@ -17,6 +19,13 @@ F7E9B3
     html {
         margin: 0;
         padding: 0;
+    }
+
+    a {
+        text-decoration: none !important;
+        color: inherit;
+        font-style: inherit;
+
     }
 
     /* Header and navbar */
@@ -69,7 +78,7 @@ F7E9B3
         color: #e32f44;
     }
 
-   
+
 
     #welcome-section {
         background-color: #3C393F;
@@ -90,11 +99,13 @@ F7E9B3
         left: 0%;
         background-color: #737e8e;
         color: white;
-        padding-bottom: 2rem;
-        
+        padding-bottom: 4rem;
+
     }
 
-    
+
+
+
 
     .projects-grid {
         display: grid;
@@ -103,16 +114,22 @@ F7E9B3
         grid-gap: 4rem;
         width: 100%;
         max-width: 1280px;
-        
+
     }
 
+
+
+    /* added margin by adjusting padding then resized img*/
     .project-image {
         height: 10rem;
-        width: 100%;
+        width: 90%;
         object-fit: cover;
         /*image covers available space*/
         display: block;
+        padding: 1rem;
     }
+
+    
 
     .project-title {
         text-align: center;
@@ -137,12 +154,12 @@ F7E9B3
 
     /*Links */
 
-    
+
 
     #links {
-        
+
         position: absolute;
-        top: 122.8%;
+        top: 130%;
         width: 100%;
         left: 0%;
         background-color: #3C393F;
@@ -155,14 +172,14 @@ F7E9B3
         left: 35%;
     }
 
-    
 
-    
+
+
 
     .list li {
         display: inline-block;
-       
-        
+
+
         position: relative;
         top: 0%;
         padding-left: 1rem;
@@ -209,12 +226,91 @@ F7E9B3
     /* Accessibility media queries */
 
     /*ipad */
-    @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {}
 
-}
+
+    /*tooltips*/
+    
+
+    
+
+    .hide {
+        opacity: 0;
+        transition:  200;
+    }
+
+    .js-dot {
+        height: 15px;
+        width: 15px;
+        background-color: #f1e05a;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 1.5rem;
+        top:  7rem; /*115px*/
+
+    }
+
+    #project-tile-1 img:hover + .js-dot {
+        
+opacity: 1 !important;
+    }
+
+    .html-dot {
+        height: 15px;
+        width: 15px;
+        background-color: #e44b23;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 29rem;
+        top:  7rem; /*115px*/
+
+    }
+
+    #project-tile-2 img:hover + .html-dot {
+        
+opacity: 1 !important;
+    }
+
+    .py-dot {
+        height: 15px;
+        width: 15px;
+        background-color: #3572A5;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 57rem;
+        top:  7rem; /*115px*/
+
+    }
+
+    #project-tile-3 img:hover + .py-dot {
+        
+opacity: 1 !important;
+    }
+
+    
+
+    .dotText {
+        display: block;
+        position: absolute;
+        bottom: -18px;
+        left: 20px;
+        color: black;
+    }
+
+    #project-tile-3 .dotText{
+        color: white;
+    }
+
+    .project-tile img:hover {
+        opacity: 0.7;
+    }
+
+    
+
+    
 </style>
 
 <html>
@@ -243,8 +339,8 @@ F7E9B3
 <body>
     <section class="center" id="welcome-section">
         <h2 id="upper">Hi my name is</h1>
-        <h1 id="name">Joe Gilbert</h1>
-        <h2 id="lower">This is my coding Portfolio- enjoy!</h1>
+            <h1 id="name">Joe Gilbert</h1>
+            <h2 id="lower">This is my coding Portfolio- enjoy!</h1>
     </section>
 
     <!--SECTION WITH PROJECTS AS A GRID D3 TEMPLATE, WEB APP, BINFO-->
@@ -253,24 +349,36 @@ F7E9B3
 
         <div class="projects-grid">
 
-            <a class="project-tile center" href="https://github.com/joeglDev/JavaScript-D3-Templates" target="_blank">
-                <img class="project-image"
-                    src="/Courses/FreeCodeCamp/Responsive Web Design/Projects/Portfolio page/images/d3 bar.jpg"
+            <a class="project-tile center" id="project-tile-1" 
+                href="https://github.com/joeglDev/JavaScript-D3-Templates" target="_blank">
+                <div>
+                <img class="project-image" src="/docs/assets/images/d3 bar.jpg"
                     alt="simple barchart made with JavaScript D3 library">
+                    <div class="hide js-dot"><p class="dotText ">JavaScript</p></div>
+                </div>
+                    
+                
                 <p class="project-title"><code><<</code>D3: Bar Chart<code>>></code></p>
                 <quote class="project-quote">A template barchart using JavaScript D3 Library</quote>
             </a>
+            
 
-            <a class="project-tile center" href="https://github.com/joeglDev/2022-03-Weather-App.2" target="_blank">
-                <img class="project-image"
-                    src="/Courses/FreeCodeCamp/Responsive Web Design/Projects/Portfolio page/images/weather app.jpg">
+            
+
+            <a class="project-tile center" id="project-tile-2" href="https://github.com/joeglDev/2022-03-Weather-App" target="_blank">
+                <div>
+                <img class="project-image" src="/docs/assets/images/weather app.jpg">
+                <div class="hide html-dot"><p class="dotText ">HTML/CSS</p></div>
+            </div>
                 <p class="project-title"><code><<</code>Daily Weather App<code>>></code></p>
                 <quote class="project-quote">Weather app using JavaScript fetch to fetch data from APIs</quote>
             </a>
 
-            <a class="project-tile center" href="https://github.com/joeglDev/Bioinformatics-in-Python" target="_blank">
-                <img class="project-image"
-                    src="/Courses/FreeCodeCamp/Responsive Web Design/Projects/Portfolio page/images/python binfo.jpg">
+            <a class="project-tile center" id="project-tile-3" href="https://github.com/joeglDev/Bioinformatics-in-Python" target="_blank">
+                <div>
+                <img class="project-image" src="/docs/assets/images/python binfo.jpg">
+                <div class="hide py-dot"><p class="dotText ">Python</p></div>
+            </div>
                 <p class="project-title"><code><<</code>DNA manipulation<code>>></code></p>
                 <quote class="project-quote">A project to carry out bioinformatics operations on short DNA strings using
                     Python</quote>
@@ -284,10 +392,10 @@ F7E9B3
 
     <!--Contact Details-->
     <section id="links">
-        <h2 class="center" >Contact me</h2>
+        <h2 class="center">Contact me</h2>
         <div class="list">
             <ul>
-                <li id="git" >
+                <li id="git">
                     <a id="profile-link" href="https://github.com/joeglDev" target="_blank">GitHub </a>
                 </li>
                 <li id="linkedIn">
@@ -302,9 +410,16 @@ F7E9B3
 
     </section>
 
-    
+
 
 
 </body>
 
+<script>
+    
+    
+    
+    </script>
+
 </html>
+
