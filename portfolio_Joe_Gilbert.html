@@ -3,9 +3,7 @@
 
 <!--TODO:
 CONVERT PROJECTS SECTION INTO LINK TO SECTION PAGE BY SECTIONS
-
--ADD CV
--ADD IMagnes to links-->
+ADD ABOUT ME-->
 <style>
     /*
 DD4A54
@@ -52,19 +50,19 @@ F7E9B3
     #navbar li {
         position: relative;
         top: 0%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        
+        
         height: 6.2vh;
         box-sizing: inherit;
     }
 
-    #navbar li:hover {
+    #navbar a:hover {
         background-color: #3C393F;
-        position: absolute;
     }
 
     #navbar a {
         color: white;
+        padding: 2rem;
         text-decoration: none;
         font-family: helvetica;
         font-size: 1.25rem;
@@ -75,7 +73,7 @@ F7E9B3
     /*welcome section */
     h1 {
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 3.1rem;
         color: #e32f44;
     }
 
@@ -91,11 +89,28 @@ F7E9B3
 
     }
 
+    #cv_download label {
+        font-weight: bold;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    button {
+        
+  background-color: white;
+  width: 4rem;
+}
+
+button:hover {
+    background-color: rgb(228, 209, 209);
+}
+    
+
     /* Projects section */
 
     #projects {
         position: absolute;
-        top: 52%;
+        top: 66%;
         width: 100%;
         left: 0%;
         background-color: #737e8e;
@@ -160,7 +175,7 @@ F7E9B3
     #links {
 
         position: absolute;
-        top: 130%;
+        top: 145%;
         width: 100%;
         left: 0%;
         background-color: #3C393F;
@@ -170,19 +185,21 @@ F7E9B3
 
     .list {
         position: absolute;
-        left: 35%;
+        text-align: center;
+
     }
 
 
-
+.list ul {
+    text-align: center!important;
+}
 
 
     .list li {
         display: inline-block;
-
-
         position: relative;
         top: 0%;
+        left: 112%;
         padding-left: 1rem;
         padding-right: 1rem;
         height: 6.2vh;
@@ -190,9 +207,7 @@ F7E9B3
         list-style: none;
     }
 
-    .list li:hover {
-        background-color: #3C393F;
-    }
+    
 
     .list a {
         color: white;
@@ -213,13 +228,10 @@ F7E9B3
         text-align: center;
     }
 
-    #test {
-        position: absolute;
-        top: 10000px;
-    }
+    
 
     h2 {
-        font-size: 2rem;
+        font-size: 2.25rem;
         font-weight: bold;
         color: white;
     }
@@ -231,7 +243,7 @@ F7E9B3
 
 
     /*tooltips*/
-    
+  
 
     
 
@@ -248,7 +260,7 @@ F7E9B3
         display: inline-block;
         position: absolute;
         left: 1.5rem;
-        top:  7rem; /*115px*/
+        top:  7.6rem; /*115px*/
 
     }
 
@@ -265,7 +277,7 @@ opacity: 1 !important;
         display: inline-block;
         position: absolute;
         left: 29rem;
-        top:  7rem; /*115px*/
+        top:  7.6rem; /*115px*/
 
     }
 
@@ -282,7 +294,7 @@ opacity: 1 !important;
         display: inline-block;
         position: absolute;
         left: 57rem;
-        top:  7rem; /*115px*/
+        top:  7.6rem; /*115px*/
 
     }
 
@@ -342,6 +354,12 @@ opacity: 1 !important;
         <h2 id="upper">Hi my name is</h1>
             <h1 id="name">Joe Gilbert</h1>
             <h2 id="lower">This is my coding Portfolio- enjoy!</h1>
+
+        <form id="cv_download">
+            <label for="cv">Download my CV</label>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <button type="submit" id="cv" name="cv" onclick="download()"><i class="fa fa-download"></i></button>
+        </form>
     </section>
 
     <!--SECTION WITH PROJECTS AS A GRID D3 TEMPLATE, WEB APP, BINFO-->
@@ -395,15 +413,17 @@ opacity: 1 !important;
     <section id="links">
         <h2 class="center">Contact me</h2>
         <div class="list">
-            <ul>
+            <ul >
                 <li id="git">
-                    <a id="profile-link" href="https://github.com/joeglDev" target="_blank">GitHub </a>
+                    <a id="profile-link" href="https://github.com/joeglDev" target="_blank"><i class="fa-brands fa-github-square"></i>
+
+                        GitHub </a>
                 </li>
                 <li id="linkedIn">
-                    <a href="https://www.linkedin.com/in/joegilbertdev/" target="_blank"> LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/joegilbertdev/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 </li>
                 <li id="email">
-                    <a href="mailto:joegilbertdev@outlook.com" target="_blank"> Email</a>
+                    <a href="mailto:joegilbertdev@outlook.com" target="_blank"><i class="fa-solid fa-envelope"></i> Email</a>
                 </li>
             </ul>
 
@@ -417,10 +437,22 @@ opacity: 1 !important;
 </body>
 
 <script>
-    
+
+//creates a tag to download cv from cloud.
+function download() {
+    	var anchor = document.createElement('a');
+    	anchor.setAttribute('href',"https://1drv.ms/b/s!Ag7OG9yYzTBJaeMRHt4VuFv12hw?e=hTq9do");
+    	anchor.setAttribute('download','text/html');
+        anchor.setAttribute('target', '_blank');
+    	document.body.appendChild(anchor);
+    	anchor.click();
+    	anchor.parentNode.removeChild(anchor);
+  }
     
     
     </script>
+
+<script src="https://kit.fontawesome.com/7267156fa1.js" crossorigin="anonymous"></script>
 
 </html>
 
