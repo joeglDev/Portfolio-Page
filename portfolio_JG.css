@@ -1,0 +1,315 @@
+  /*
+DD4A54
+DD9B72
+F7E9B3
+89DFCC
+3C393F 
+*/
+
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+    font-style: inherit;
+
+}
+
+/* Header and navbar */
+header {
+    background-color: #e32f44;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+    height: 9vh;
+
+}
+
+#navbar ul {
+    display: flex;
+    margin-right: 2rem;
+    list-style: none;
+    height: 9vh;
+}
+
+#navbar li {
+    position: relative;
+    top: 0%;
+    
+    
+    height: 6.2vh;
+    box-sizing: inherit;
+}
+
+#navbar a:hover {
+    background-color: #3C393F;
+}
+
+#navbar a {
+    color: white;
+    padding: 2rem;
+    text-decoration: none;
+    font-family: helvetica;
+    font-size: 1.25rem;
+}
+
+
+
+/*welcome section */
+h1 {
+    font-weight: bold;
+    font-size: 3.1rem;
+    color: #e32f44;
+}
+
+
+
+#welcome-section {
+    background-color: #3C393F;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 8%;
+
+}
+
+#cv_download label {
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
+
+button {
+    
+background-color: white;
+width: 4rem;
+}
+
+button:hover {
+background-color: rgb(228, 209, 209);
+}
+
+
+/* Projects section */
+
+#projects {
+    position: absolute;
+    top: 66%;
+    width: 100%;
+    left: 0%;
+    background-color: #737e8e;
+    color: white;
+    padding-bottom: 4rem;
+
+}
+
+
+
+
+
+.projects-grid {
+    display: grid;
+    /*see: https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/*/
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+
+}
+
+
+
+/* added margin by adjusting padding then resized img*/
+.project-image {
+    height: 10rem;
+    width: 90%;
+    object-fit: cover;
+    /*image covers available space*/
+    display: block;
+    padding: 1rem;
+}
+
+
+
+.project-title {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 0.5rem;
+    font-family: helvetica;
+    font-size: 1.25rem;
+
+}
+
+.project-quote {
+    font-style: italic;
+    text-align: center;
+
+    color: white;
+    text-decoration: none;
+
+    font-family: helvetica;
+    font-size: 1rem;
+}
+
+/*Links */
+
+
+
+#links {
+
+    position: absolute;
+    top: 145%;
+    width: 100%;
+    left: 0%;
+    background-color: #3C393F;
+    color: white;
+    padding-bottom: 6rem;
+}
+
+.list {
+    position: absolute;
+    text-align: center;
+
+}
+
+
+.list ul {
+text-align: center!important;
+}
+
+
+.list li {
+    display: inline-block;
+    position: relative;
+    top: 0%;
+    left: 112%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 6.2vh;
+    box-sizing: inherit;
+    list-style: none;
+}
+
+
+
+.list a {
+    color: white;
+    text-decoration: none;
+    font-family: helvetica;
+    font-size: 1.25rem;
+}
+
+.list li:hover {
+    scale: 1.25;
+}
+
+
+
+/* general classes */
+
+.center {
+    text-align: center;
+}
+
+
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Accessibility media queries */
+
+/*ipad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {}
+
+
+/*tooltips*/
+
+
+
+
+.hide {
+    opacity: 0;
+    transition:  200;
+}
+
+.js-dot {
+    height: 15px;
+    width: 15px;
+    background-color: #f1e05a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 1.5rem;
+    top:  7.6rem; /*115px*/
+
+}
+
+#project-tile-1 img:hover + .js-dot {
+    
+opacity: 1 !important;
+}
+
+.html-dot {
+    height: 15px;
+    width: 15px;
+    background-color: #e44b23;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 29rem;
+    top:  7.6rem; /*115px*/
+
+}
+
+#project-tile-2 img:hover + .html-dot {
+    
+opacity: 1 !important;
+}
+
+.py-dot {
+    height: 15px;
+    width: 15px;
+    background-color: #3572A5;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 57rem;
+    top:  7.6rem; /*115px*/
+
+}
+
+#project-tile-3 img:hover + .py-dot {
+    
+opacity: 1 !important;
+}
+
+
+
+.dotText {
+    display: block;
+    position: absolute;
+    bottom: -18px;
+    left: 20px;
+    color: black;
+}
+
+#project-tile-3 .dotText{
+    color: white;
+}
+
+.project-tile img:hover {
+    opacity: 0.7;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+
+<!--TODO:
+CONVERT PROJECTS SECTION INTO LINK TO SECTION PAGE BY SECTIONS
+ADD ABOUT ME-->
+<style>
+    @import "portfolio_JG.css";
+</style>
+
+<html>
+
+<!-- HEADER WITH NAVBAR-->
+<header id="header">
+
+    <nav id="navbar">
+        <ul>
+            <li id="top">
+                <a href="#welcome-section">Welcome </a>
+            </li>
+            <li id="work">
+                <a href="#projects"> My work</a>
+            </li>
+            <li id="contact">
+                <a href="#links"> Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<!--BODY WITH WELCOME SECTION-->
+
+<body>
+    <section class="center" id="welcome-section">
+        <h2 id="upper">Hi my name is</h1>
+            <h1 id="name">Joe Gilbert</h1>
+            <h2 id="lower">This is my coding Portfolio- enjoy!</h1>
+
+                <form id="cv_download">
+                    <label for="cv">Download my CV</label>
+                    <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <button type="submit" id="cv" name="cv" onclick="download()"><i class="fa fa-download"></i></button>
+                </form>
+    </section>
+
+    <!--SECTION WITH PROJECTS AS A GRID D3 TEMPLATE, WEB APP, BINFO-->
+    <section id="projects">
+        <h2 class="center">My projects</h2>
+
+        <div class="projects-grid">
+
+            <a class="project-tile center" id="project-tile-1"
+                href="https://github.com/joeglDev/JavaScript-D3-Templates" target="_blank">
+                <div>
+                    <img class="project-image" src="/docs/assets/images/d3 bar.jpg"
+                        alt="simple barchart made with JavaScript D3 library">
+                    <div class="hide js-dot">
+                        <p class="dotText ">JavaScript</p>
+                    </div>
+                </div>
+
+
+                <p class="project-title"><code><<</code>D3: Bar Chart<code>>></code></p>
+                <quote class="project-quote">A template barchart using JavaScript D3 Library</quote>
+            </a>
+
+
+
+
+            <a class="project-tile center" id="project-tile-2" href="https://github.com/joeglDev/2022-03-Weather-App"
+                target="_blank">
+                <div>
+                    <img class="project-image" src="/docs/assets/images/weather app.jpg">
+                    <div class="hide html-dot">
+                        <p class="dotText ">HTML/CSS</p>
+                    </div>
+                </div>
+                <p class="project-title"><code><<</code>Daily Weather App<code>>></code></p>
+                <quote class="project-quote">Weather app using JavaScript fetch to fetch data from APIs</quote>
+            </a>
+
+            <a class="project-tile center" id="project-tile-3"
+                href="https://github.com/joeglDev/Bioinformatics-in-Python" target="_blank">
+                <div>
+                    <img class="project-image" src="/docs/assets/images/python binfo.jpg">
+                    <div class="hide py-dot">
+                        <p class="dotText ">Python</p>
+                    </div>
+                </div>
+                <p class="project-title"><code><<</code>DNA manipulation<code>>></code></p>
+                <quote class="project-quote">A project to carry out bioinformatics operations on short DNA strings using
+                    Python</quote>
+            </a>
+
+
+
+        </div>
+
+    </section>
+
+    <!--Contact Details-->
+    <section id="links">
+        <h2 class="center">Contact me</h2>
+        <div class="list">
+            <ul>
+                <li id="git">
+                    <a id="profile-link" href="https://github.com/joeglDev" target="_blank"><i
+                            class="fa-brands fa-github-square"></i>
+
+                        GitHub </a>
+                </li>
+                <li id="linkedIn">
+                    <a href="https://www.linkedin.com/in/joegilbertdev/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                </li>
+                <li id="email">
+                    <a href="mailto:joegilbertdev@outlook.com" target="_blank"><i class="fa-solid fa-envelope"></i>
+                        Email</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+<script src="portfolio_JG.js"></script>
+<script src="https://kit.fontawesome.com/7267156fa1.js" crossorigin="anonymous"></script>
+
+</html>
